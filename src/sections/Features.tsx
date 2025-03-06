@@ -1,3 +1,5 @@
+import Tag from "@/components/Tag";
+
 const features = [
     "Asset Library",
     "Code Preview",
@@ -9,5 +11,56 @@ const features = [
 ];
 
 export default function Features() {
-    return <div>Features</div>;
+    return (
+        <section className="py-24">
+            <div className="container">
+                <div className="flex justify-center">
+                    <Tag>Features</Tag>
+                </div>
+                <h2 className="font-medium text-6xl text-center mt-6">
+                    Where power meets <span className="text-lime-400">simplicity</span>
+                </h2>
+                <div>
+                    <div>
+                        <div></div>
+                        <div>
+                            <h3>Real-time Collaboration</h3>
+                            <p>
+                                Work together seamlessly with conflic-free team
+                                editing
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div>
+                            <h3>Interactive Prototyping</h3>
+                            <p>
+                                Engage your clients with prototypes that react
+                                to user actions
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div>
+                            <h3>Keyboard Quick Actions</h3>
+                            <p>
+                                Powerful commands to help you create designs
+                                more quickly
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    {features.map((feature, id) => (
+                        <div key={id}>
+                            <span></span>
+                            <span>{feature}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }
