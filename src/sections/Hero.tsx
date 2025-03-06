@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import designExample1Image from '@/assets/images/design-example-1.png';
 import designExample2Image from '@/assets/images/design-example-2.png';
+import Pointer from "@/components/pointer";
 
 export default function Hero() {
     return (
@@ -13,6 +14,7 @@ export default function Hero() {
                 <div className="absolute -right-64 -top-16">
                     <Image src={designExample2Image} alt="Design Example 2" className="cursor-nwse-resize"/>
                 </div>
+                <div className="absolute"><Pointer name="Andrea" color="red"/></div>
                 <div className="flex justify-center items-center">
                     <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-neutral-950 font-semibold">
                         ✨$7.5M seed round raised
