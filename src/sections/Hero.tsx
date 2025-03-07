@@ -7,7 +7,7 @@ import Pointer from "@/components/pointer";
 export default function Hero() {
     return (
         <section className="py-24 overflow-x-clip">
-            <div className="container relative ">
+            <div className="container relative">
                 <div className="absolute -left-32 top-16 hidden lg:block">
                     <Image
                         src={designExample1Image}
