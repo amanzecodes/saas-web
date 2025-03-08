@@ -1,3 +1,5 @@
+import Tag from "@/components/Tag";
+
 const faqs = [
     {
         question: "How is Layers different from other design tools?",
@@ -22,5 +24,41 @@ const faqs = [
 ];
 
 export default function Faqs() {
-    return <div>Faqs</div>;
+    return (
+        <section className="py-24">
+            <div className="container">
+                <div className="flex justify-center">
+                <Tag>Faqs</Tag>
+                </div>
+                <h2>
+                    Questions? We've got <span>answers</span>
+                </h2>
+                <div>
+                    {faqs.map((faq, index) => (
+                        <div key={index}>
+                            <div>
+                                <h3>{faq.question}</h3>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="feather feather-plus text-lime-400"
+                                >
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </div>
+                            <p>{faq.answer}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }
