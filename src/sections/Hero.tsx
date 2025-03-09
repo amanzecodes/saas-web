@@ -27,6 +27,17 @@ export default function Hero() {
             [leftPointerScope.current, { x: 0, y:[0, 16, 0]}, { duration: 0.5, ease:'easeInOut' }],
         ])
 
+        rightDesignAnimate([
+            [rightDesignScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }],
+            [rightDesignScope.current, { y: 0, x: 0 }, { duration: 0.5 }],
+        ]);
+
+        rightPointerAnimate([
+            [rightPointerScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }],
+            [rightPointerScope.current, { y: 0, x: 175 }, { duration: 0.5 }],
+            [rightPointerScope.current, { x: 0, y:[0, 20, 0]}, { duration: 0.5, ease:'easeInOut' }],
+        ])
+
 
     }, []);
 
@@ -60,7 +71,13 @@ export default function Hero() {
                     <Pointer name="Andrea" />
                 </motion.div>
 
-                <motion.div className="absolute -right-64 -top-16 hidden lg:block">
+                <motion.div 
+                initial={{
+                    opacity: 0,
+                    x:100,
+                    y:100
+                }}
+                ref={rightDesignScope} className="absolute -right-64 -top-16 hidden lg:block">
                     <Image
                         src={designExample2Image}
                         alt="Design Example 2"
@@ -68,7 +85,13 @@ export default function Hero() {
                     />
                 </motion.div>
 
-                <motion.div className="absolute right-80 -top-4 hidden lg:block">
+                <motion.div 
+                initial={{
+                    opacity: 0,
+                    x:275,
+                    y:100
+                }}
+                ref={rightPointerScope} className="absolute right-80 -top-4 hidden lg:block">
                     <Pointer name="Bryan" color="red" />
                 </motion.div>
 
