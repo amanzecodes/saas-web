@@ -20,8 +20,8 @@ export default function Navbar() {
         <>
         <section className="py-4 lg:py-8 fixed w-full top-0 z-50">
             <div className="container max-w-5xl">
-                <div className="border border-white/15 rounded-[24px] md:rounded-full bg-neutral-950/70 backdrop-blur">
-                    <div className="grid grid-cols-2 lg:grid-cols-3 px-4 md:pr-2 items-center mt-3 py-2">
+                <div className="border border-white/15 rounded-[24px] md:rounded-full mt-3 bg-neutral-950/70 backdrop-blur">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 px-4 md:pr-2 items-center py-2">
                         <div>
                             <Image
                                 src={logoImage}
