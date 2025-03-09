@@ -103,7 +103,11 @@ export default function Navbar() {
                     initial={{ height: 0}}
                     animate={{ height: "auto"}}
                     exit={{ height: 0}}
-                    className="overflow-hidden">
+                    transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                    }}
+                    className="overflow-hidden md:hidden">
                         <div className="flex flex-col items-center gap-4 py-4 ">
                         {navLinks.map(link => (
                             <a href={link.href} key={link.label} className="">{link.label}</a>
