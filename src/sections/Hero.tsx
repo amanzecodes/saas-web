@@ -7,6 +7,7 @@ import designExample2Image from "@/assets/images/design-example-2.png";
 import Pointer from "@/components/pointer";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import cursorYouImage from "@/assets/images/cursor-you.svg";
 
 export default function Hero() {
     const [leftDesignScope, leftDesignAnimate] = useAnimate();
@@ -24,25 +25,44 @@ export default function Hero() {
         leftPointerAnimate([
             [leftPointerScope.current, { opacity: 1 }, { duration: 0.5 }],
             [leftPointerScope.current, { y: 0, x: -100 }, { duration: 0.5 }],
-            [leftPointerScope.current, { x: 0, y:[0, 16, 0]}, { duration: 0.5, ease:'easeInOut' }],
-        ])
+            [
+                leftPointerScope.current,
+                { x: 0, y: [0, 16, 0] },
+                { duration: 0.5, ease: "easeInOut" },
+            ],
+        ]);
 
         rightDesignAnimate([
-            [rightDesignScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }],
+            [
+                rightDesignScope.current,
+                { opacity: 1 },
+                { duration: 0.5, delay: 1.5 },
+            ],
             [rightDesignScope.current, { y: 0, x: 0 }, { duration: 0.5 }],
         ]);
 
         rightPointerAnimate([
-            [rightPointerScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }],
+            [
+                rightPointerScope.current,
+                { opacity: 1 },
+                { duration: 0.5, delay: 1.5 },
+            ],
             [rightPointerScope.current, { y: 0, x: 175 }, { duration: 0.5 }],
-            [rightPointerScope.current, { x: 0, y:[0, 20, 0]}, { duration: 0.5, ease:'easeInOut' }],
-        ])
-
-
+            [
+                rightPointerScope.current,
+                { x: 0, y: [0, 20, 0] },
+                { duration: 0.5, ease: "easeInOut" },
+            ],
+        ]);
     }, []);
 
     return (
-        <section className="py-24 overflow-x-clip">
+        <section
+            className="py-24 overflow-x-clip"
+            style={{
+                cursor: `url(${cursorYouImage.src}), auto`,
+            }}
+        >
             <div className="container relative">
                 <motion.div
                     initial={{
@@ -51,12 +71,13 @@ export default function Hero() {
                         x: -100,
                     }}
                     ref={leftDesignScope}
+                    drag
                     className="absolute -left-32 top-16 hidden lg:block"
                 >
                     <Image
+                        draggable={false}
                         src={designExample1Image}
                         alt="Design Example 1"
-                        className="cursor-nesw-resize"
                     />
                 </motion.div>
                 <motion.div
@@ -71,27 +92,32 @@ export default function Hero() {
                     <Pointer name="Andrea" />
                 </motion.div>
 
-                <motion.div 
-                initial={{
-                    opacity: 0,
-                    x:100,
-                    y:100
-                }}
-                ref={rightDesignScope} className="absolute -right-64 -top-16 hidden lg:block">
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        x: 100,
+                        y: 100,
+                    }}
+                    drag
+                    ref={rightDesignScope}
+                    className="absolute -right-64 -top-16 hidden lg:block"
+                >
                     <Image
+                        draggable={false}
                         src={designExample2Image}
                         alt="Design Example 2"
-                        className="cursor-nwse-resize"
                     />
                 </motion.div>
 
-                <motion.div 
-                initial={{
-                    opacity: 0,
-                    x:275,
-                    y:100
-                }}
-                ref={rightPointerScope} className="absolute right-80 -top-4 hidden lg:block">
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        x: 275,
+                        y: 100,
+                    }}
+                    ref={rightPointerScope}
+                    className="absolute right-80 -top-4 hidden lg:block"
+                >
                     <Pointer name="Bryan" color="red" />
                 </motion.div>
 
