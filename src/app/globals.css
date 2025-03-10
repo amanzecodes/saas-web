@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .key {
+        @apply outline outline-transparent outline-2 outline-offset-4 group-hover:translate-y-1 group-hover:outline-lime-400 transition-all duration-500;
+    }
+}
