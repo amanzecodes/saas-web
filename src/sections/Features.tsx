@@ -80,7 +80,7 @@ export default function Features() {
                     >
                         <div className="aspect-video flex items-center justify-center">
                             <p className="text-4xl font-extrabold text-white/20 group-hover:text-white/10 text-center transition duration-500">
-                                We've achieved{" "}
+                                We&apos;ve achieved{" "}
                                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative">
                                     <span>incredible</span>
                                     <video src="/assets/gif-incredible.mp4" autoPlay loop muted playsInline className="absolute bottom-full left-1/2 -translate-x-1/2 rounded-2xl shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 transition duration-500"/>
