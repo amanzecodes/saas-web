@@ -22,6 +22,9 @@ export default function Footer() {
                         </nav>
                     </div>
                 </div>
+                <div className="mt-8 text-center text-white/50 text-sm">
+                    <p>Developed with 💗 by <a href="https://github.com/amanzecodes" target="blank" className="hover:text-white duration-500 transition">Amanze Bruno</a></p>
+                </div>
             </div>
         </section>
     );
